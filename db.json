@@ -1,0 +1,21 @@
+{
+  "companyinfo": [
+    {
+      "operatingCompany": "Pro Legal Serve",
+      "companyType": "B2B",
+      "lawFirmOrBusinessName": "Flash",
+      "address1": "Company Address",
+      "state": "Maharashtra",
+      "city": "City",
+      "country": "Country",
+      "zipCode": "Zip Code",
+      "phoneNumber": "12345678",
+      "Firm speciality": "Family Law",
+      "Case managment": "Server Manager",
+      "Account manager": "Account manager",
+      "New user invited": "Email1",
+      "New user added": "Email2",
+      "Payment method changed": "Email3"
+    }
+  ]
+}
