@@ -14,6 +14,8 @@ import {
   Box,
 } from "@mantine/core";
 import LandingPage from "../LandingPage";
+import { MdExpandMore } from "react-icons/md";
+import { FaRegBell } from "react-icons/fa";
 
 export default function AppShellDemo() {
   const theme = useMantineTheme();
@@ -37,7 +39,16 @@ export default function AppShellDemo() {
           hidden={!opened}
           width={{ sm: 150, lg: 200 }}
         >
-          <Text>Company Details</Text>
+          <Text
+            fw={600}
+            sx={{
+              backgroundColor: "#FAF6E7",
+              borderRadius: "0px, 10px, 10px, 0px",
+              padding: 5,
+            }}
+          >
+            Company Details
+          </Text>
         </Navbar>
       }
       header={
@@ -72,7 +83,23 @@ export default function AppShellDemo() {
                 }}
               />
             </a>
+
             <Box display={"flex"}>
+              <Box
+                sx={{
+                  borderRadius: "50%",
+                  border: "1px solid #ADADAD",
+                  width: 40,
+                  height: 40,
+                  textAlign: "center",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  display: "flex",
+                  marginRight: 20,
+                }}
+              >
+                <FaRegBell fontSize={20} />
+              </Box>
               <Avatar
                 src={
                   " https://funkylife.in/wp-content/uploads/2023/02/cute-girl-pic-2-1024x1024.jpg"
@@ -80,9 +107,13 @@ export default function AppShellDemo() {
                 radius={48}
               />
 
-              <Box>
-                <Text fontSize={18}>John Deo</Text>
-                <Text fz="xs">Server</Text>
+              <Box ml={10}>
+                <Text fontSize={18} fw={600}>
+                  John Deo <MdExpandMore style={{ marginTop: 8 }} />
+                </Text>
+                <Text fz="xs" c="#ADADAD">
+                  Server
+                </Text>
               </Box>
             </Box>
           </div>

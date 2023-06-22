@@ -12,7 +12,7 @@
       "phoneNumber": "12345678",
       "firmspeciality": "Family Law",
       "casemanagment": "Server Manager",
-      "Account manager": "Account manager",
+      "accountmanager": "Account manager",
       "newuserinvited": "Email1",
       "newuseradded": "Email2",
       "paymentmethodchanged": "Email3"
