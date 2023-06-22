@@ -1,4 +1,4 @@
-import { Box, Divider, Text } from "@mantine/core";
+import { Box, Divider, Grid, Text, Title } from "@mantine/core";
 import React, { useEffect, useState } from "react";
 
 const LandingPage = () => {
@@ -27,90 +27,157 @@ const LandingPage = () => {
     return <div>Loading...</div>;
   }
   return (
-    <Box
-      sx={{
-        textAlign: "left",
-      }}
-    >
-      <Text>Company Information</Text>
-      {companyInfo.map((info, index) => (
-        <>
-          <Box>
+    <>
+      <Box
+        sx={{
+          textAlign: "left",
+          height: 40,
+        }}
+      >
+        <Title order={3} size="h2">
+          Company Information
+        </Title>
+      </Box>
+      <Box
+        sx={{
+          textAlign: "left",
+        }}
+      >
+        {companyInfo.map((info, index) => (
+          <>
             <Box
               sx={{
-                display: "flex",
-                justifyContent: "space-evenly",
+                textAlign: "left",
+                marginTop: 10,
               }}
             >
-              <Box>
-                <Text>Operating Company:</Text>
-                <Text>{info.operatingCompany}</Text>
-              </Box>
-              <Box>
-                <Text>Company Type:</Text>
-                <Text>{info.companyType}</Text>
+              <Grid grow gutter="xs">
+                <Grid.Col span={4}>
+                  <Box>
+                    <Text fz="xs" c="#ADADAD">
+                      Operating Company
+                    </Text>
+                    <Text>{info.operatingCompany}</Text>
+                  </Box>
+                </Grid.Col>
+                <Grid.Col span={4}>
+                  <Box>
+                    <Text fz="xs" c="#ADADAD">
+                      Company Type:
+                    </Text>
+                    <Text>{info.companyType}</Text>
+                  </Box>
+                </Grid.Col>
+                <Grid.Col span={4}>
+                  <Box>
+                    <Text fz="xs" c="#ADADAD">
+                      Law Firm Or Business Name:
+                    </Text>
+                    <Text>{info.lawFirmOrBusinessName}</Text>
+                  </Box>
+                </Grid.Col>
+              </Grid>
+
+              <Box
+                sx={{
+                  marginTop: 15,
+                }}
+              >
+                <Text fz="xs" c="#ADADAD">
+                  Address1
+                </Text>
+                <Title order={3} size="h4">
+                  Company Address
+                </Title>
               </Box>
 
-              <Box>
-                <Text>Law Firm Or Business Name:</Text>
-                <Text>{info.lawFirmOrBusinessName}</Text>
-              </Box>
+              <Grid grow gutter="xs">
+                <Grid.Col span={4}>
+                  <Box>
+                    <Text fz="xs" c="#ADADAD">
+                      State
+                    </Text>
+                    <Text>{info.state}</Text>
+                  </Box>
+                </Grid.Col>
+                <Grid.Col span={4}>
+                  <Box>
+                    <Text fz="xs" c="#ADADAD">
+                      City
+                    </Text>
+                    <Text>{info.city}</Text>
+                  </Box>
+                </Grid.Col>
+                <Grid.Col span={4}>
+                  <Box>
+                    <Text fz="xs" c="#ADADAD">
+                      Country
+                    </Text>
+                    <Text>{info.country}</Text>
+                  </Box>
+                </Grid.Col>
+              </Grid>
             </Box>
+            <Divider my="sm" variant="dashed" />
+            <Title order={3} size="h2">
+              Law firm information
+            </Title>
 
-            <Box>
-              <Text>Address1</Text>
-              <Text>Address1</Text>
-            </Box>
+            <Grid>
+              <Grid.Col span={4}>
+                <Box>
+                  <Text fz="xs" c="#ADADAD">
+                    Firm speciality
+                  </Text>
+                  <Text>{info.firmspeciality}</Text>
+                </Box>
+              </Grid.Col>
+              <Grid.Col span={6}>
+                <Box>
+                  <Text fz="xs" c="#ADADAD">
+                    Case managment
+                  </Text>
+                  <Text>{info.casemanagment}</Text>
+                </Box>
+              </Grid.Col>
+            </Grid>
 
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Box>
-                <Text>State</Text>
-                <Text>{info.state}</Text>
-              </Box>
+            <Divider my="sm" variant="dashed" />
+            <Title order={3} size="h2">
+              Company notification settings
+            </Title>
 
-              <Box>
-                <Text>City</Text>
-                <Text>{info.city}</Text>
-              </Box>
-              <Box>
-                <Text>Country</Text>
-                <Text>{info.country}</Text>
-              </Box>
-            </Box>
-          </Box>
-          <Divider my="sm" variant="dashed" />
-          <Text>Law firm information</Text>
-
-          <Box>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Box>
-                <Text>Firm speciality</Text>
-                <Text>{info.firmspeciality}</Text>
-              </Box>
-
-              <Box>
-                <Text>Case managment</Text>
-                <Text>{info.casemanagment}</Text>
-              </Box>
-            </Box>
-          </Box>
-
-          <Divider my="sm" variant="dashed" />
-          <Text>Company notification settings</Text>
-          <Divider my="sm" variant="dashed" />
-        </>
-      ))}
-    </Box>
+            <Grid grow gutter="xs">
+              <Grid.Col span={4}>
+                <Box>
+                  <Text fz="xs" c="#ADADAD">
+                    New user invited
+                  </Text>
+                  <Text>{info.newuserinvited}</Text>
+                </Box>
+              </Grid.Col>
+              <Grid.Col span={4}>
+                <Box>
+                  <Text fz="xs" c="#ADADAD">
+                    New user added
+                  </Text>
+                  <Text>{info.newuseradded}</Text>
+                </Box>
+              </Grid.Col>
+              <Grid.Col span={4}>
+                <Box>
+                  <Text fz="xs" c="#ADADAD">
+                    Payment method changed
+                  </Text>
+                  <Text>{info.paymentmethodchanged}</Text>
+                </Box>
+              </Grid.Col>
+            </Grid>
+            <Divider my="sm" variant="dashed" />
+          </>
+        ))}
+      </Box>
+    </>
   );
 };
 
